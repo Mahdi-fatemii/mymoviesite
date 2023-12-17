@@ -9,7 +9,8 @@ class MovieData(models.Model):
         return self.name
 
     name = models.CharField(max_length=200)
-    genres = models.CharField(max_length=300)
+    genres = models.CharField(max_length=300, default='unspecified')
     duration = models.FloatField()
     rating = models.FloatField()
     release_date = models.DateField()
+

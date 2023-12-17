@@ -17,11 +17,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from movies.views import MovieViewSet
+from movies.views import *
 
-router = routers.DefaultRouter()
+router = routers.SimpleRouter()
 router.register('movies', MovieViewSet)
-
+router.register('Western', GenreWesternViewSet)
+router.register('Drama', GenreDramaViewSet)
+router.register('Crime', GenreCrimeViewSet)
+router.register('War', GenreWarViewSet)
+router.register('Adventure', GenreAdventureViewSet)
+router.register('Action', GenreActionViewSet)
+router.register('Comedy', GenreComedyViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
