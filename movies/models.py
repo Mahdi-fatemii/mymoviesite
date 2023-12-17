@@ -13,4 +13,6 @@ class MovieData(models.Model):
     duration = models.FloatField()
     rating = models.FloatField()
     release_date = models.DateField()
+    image = models.ImageField(upload_to='Images/', default="Images/None/NoImg.jpg")
+
 
